@@ -16,6 +16,7 @@ docker-compose up -d
 Step 2: Check running containers
 docker ps
 
+
 You should see something like:
 
 CONTAINER ID   IMAGE                           STATUS         PORTS
@@ -23,21 +24,25 @@ abc123def456   infracloudio/csvserver:latest   Up 2 mins      0.0.0.0:9393->9300
 xyz789ghi012   prom/prometheus:latest          Up 2 mins      0.0.0.0:9090->9090/tcp
 
 🌐 Verify Services
-   Service          	  URL                        	Description
-   CSV Server	  http://localhost:9393   Displays table with orange border
-   Prometheus	  http://localhost:9090   Monitoring metrics dashboard
-
+Service	URL	Description
+CSV Server	http://localhost:9393
+	Displays table with orange border
+Prometheus	http://localhost:9090
+	Monitoring metrics dashboard
 ⚙️ Environment Variables
+
 .env file (csvserver.env) contains:
-  
-  CSVSERVER_BORDER=Orange
+
+CSVSERVER_BORDER=Orange
 
 📊 Prometheus Target
+
 Prometheus scrapes metrics from the CSV Server endpoint:
 
 - job_name: 'csvserver'
   static_configs:
     - targets: ['csvserver:9300']
+
 
 If csvserver hostname fails, replace with:
 
@@ -71,5 +76,3 @@ Prometheus Page:
 💬 Author
 
 Prateek Mall
-
-
