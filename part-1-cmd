@@ -1,0 +1,6 @@
+docker run -d \
+  -v "C:\Users\Lenovo\inputFile.txt:/csvserver/inputdata" \
+  -e CSVSERVER_BORDER=Orange \
+  -p 9393:9300 \
+  infracloudio/csvserver:latest
+
