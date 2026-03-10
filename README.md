@@ -1,6 +1,6 @@
-# 📘 CSVServer Assignment — Solution
+# 📘 CSVServer — Solution
 
-CSVServer Assignment
+CSVServer 
 
 This project runs a CSV Server inside Docker and exposes Prometheus metrics for monitoring.
 
